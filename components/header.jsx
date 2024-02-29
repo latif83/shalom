@@ -55,7 +55,7 @@ export const Header = () => {
       <button onClick={() => setShowNav(true)} className="sm:hidden">
         <FontAwesomeIcon
           icon={faBarsStaggered}
-          className="text-3xl text-white"
+          className="text-2xl text-white"
         />
       </button>
       {showNav && (

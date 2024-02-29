@@ -66,7 +66,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className={`h-screen ${styles.container}`}>
+      <div className={`${styles.container}`}>
         <div style={{ height: "12%" }}>
           <Header />
         </div>
