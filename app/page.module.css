@@ -1,0 +1,95 @@
+
+
+.banner{
+    position: relative;
+    background-image: linear-gradient(270deg, #01466f 0%, #002b67 51%);
+}
+
+.banner::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url("/cross.png");
+    background-position-x: left;
+    background-position-y: bottom;
+    background-size: 200px;
+    background-repeat: no-repeat;
+}
+
+.w1{
+    width: 60%;
+    position: relative;
+    z-index: 99999;
+}
+
+/* .bg1::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.699);
+} */
+
+.bg2{
+    background-image: url('/bg2.jpg');
+    background-size: cover;
+    background-position: top;
+    position: relative;
+}
+
+/* .bg2::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.678);
+} */
+
+@media(max-width:600px){
+    .banner::after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        /* background-color: red; */
+        background-image: url("/bg6.jpg");
+        background-size: cover;
+        opacity: .6;
+        transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    }
+}
+
+.imageContainer {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out; /* Apply transition effect to opacity */
+  }
+  
+  .visible {
+    opacity: 1; /* Show the image */
+    z-index: 1; /* Ensure it's on top */
+  }
+  
+  .hidden {
+    opacity: 0; /* Hide the image */
+  }
+  
