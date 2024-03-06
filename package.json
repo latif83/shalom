@@ -14,12 +14,16 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@prisma/client": "^5.7.1",
+    "firebase": "^10.8.1",
     "framer-motion": "^11.0.7",
     "next": "14.1.0",
+    "prisma": "^5.10.2",
     "react": "^18",
     "react-dom": "^18",
     "react-slick": "^0.30.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

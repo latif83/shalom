@@ -4,6 +4,7 @@ import "./globals.css";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { ToasterProvider } from "@/providers/ToasterContext";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -27,7 +28,11 @@ export default function RootLayout({ children }) {
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
       </head>
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+      <ToasterProvider>
+        {children}
+        </ToasterProvider>
+        </body>
     </html>
   );
 }
