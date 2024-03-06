@@ -3,7 +3,7 @@ import prisma from "@/config/prisma";
 
 export const addPastor = async (formData) => {
   let { f_name, l_name, title, email, address, contact } = formData;
-  const createPastor = await prisma.pastors.create({
+  const createPastor = await prisma.shalom_pastors.create({
     data: {
       f_name: f_name,
       l_name: l_name,
@@ -31,7 +31,7 @@ export const editPastor = async (formData) => {
     let { id, f_name, l_name, title, email, address, contact } = formData;
 
     // Update the pastor using the provided ID
-    const updatedPastor = await prisma.pastors.update({
+    const updatedPastor = await prisma.shalom_pastors.update({
       where: {
         id: id,
       },
@@ -66,7 +66,7 @@ export const editPastor = async (formData) => {
 };
 
 export const getPastors = async () => {
-  const pastors = await prisma.pastors.findMany({
+  const pastors = await prisma.shalom_pastors.findMany({
     orderBy: {
       createdAt: "desc",
     },
@@ -87,7 +87,7 @@ export const getPastors = async () => {
 
 export const addMember = async (formData) => {
   let { f_name, l_name, title, email, address, contact } = formData;
-  const createMember = await prisma.members.create({
+  const createMember = await prisma.shalom_members.create({
     data: {
       f_name: f_name,
       l_name: l_name,
@@ -115,7 +115,7 @@ export const editMember = async (formData) => {
     let { id, f_name, l_name, title, email, address, contact } = formData;
 
     // Update the pastor using the provided ID
-    const updatedMember = await prisma.members.update({
+    const updatedMember = await prisma.shalom_members.update({
       where: {
         id: id,
       },
@@ -150,7 +150,7 @@ export const editMember = async (formData) => {
 };
 
 export const getMembers = async () => {
-  const members = await prisma.members.findMany({
+  const members = await prisma.shalom_members.findMany({
     orderBy: {
       createdAt: "desc",
     },
@@ -171,7 +171,7 @@ export const getMembers = async () => {
 
 export const addEvent = async (formData) => {
   let { title, des, sDate, eDate, imageUrl } = formData;
-  const createEvent = await prisma.events.create({
+  const createEvent = await prisma.shalom_events.create({
     data: {
       title,
       des,
@@ -198,7 +198,7 @@ export const editEvent = async (formData) => {
     let { id, title, des, sDate, eDate, imageUrl } = formData;
 
     // Update the event using the provided ID
-    const updatedEvent = await prisma.events.update({
+    const updatedEvent = await prisma.shalom_events.update({
       where: {
         id: id,
       },
@@ -232,7 +232,7 @@ export const editEvent = async (formData) => {
 };
 
 export const getEvents = async () => {
-  const events = await prisma.events.findMany({
+  const events = await prisma.shalom_events.findMany({
     orderBy: {
       createdAt: "desc",
     },

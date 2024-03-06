@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model pastors {
+model shalom_pastors {
   id            String   @id @default(cuid())
   email         String   
   f_name          String
@@ -22,7 +22,7 @@ model pastors {
   updatedAt     DateTime @updatedAt
 }
 
-model members {
+model shalom_members {
   id            String   @id @default(cuid())
   email         String   
   f_name          String
@@ -34,7 +34,7 @@ model members {
   updatedAt     DateTime @updatedAt
 }
 
-model events {
+model shalom_events {
   id            String   @id @default(cuid())
   title         String   
   des          String
