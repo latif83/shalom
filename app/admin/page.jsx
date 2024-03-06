@@ -15,7 +15,7 @@ export default function AdminPage() {
         </div>
 
         <div className="mt-12">
-          <div className="grid grid-cols-3 gap-10">
+          <div className="grid sm:grid-cols-3 gap-10">
             <div className="shadow-lg flex items-center gap-4 border border-blue-400 rounded-lg p-3">
               <div style={{flexShrink:0,width:'10%'}}>
                 <FontAwesomeIcon icon={faUserTie} className="text-4xl" />

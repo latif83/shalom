@@ -51,8 +51,8 @@ export const AddPastor = ({ setAddPastor,setGP }) => {
   }, [sendData]);
 
   return (
-    <div className={`${styles.container} pt-10`}>
-      <div className="w-full max-w-xl mx-auto bg-white rounded shadow p-10">
+    <div className={`${styles.container} sm:pt-10`}>
+      <div className="w-full max-w-xl mx-auto bg-white h-full sm:h-auto sm:rounded shadow p-10">
         <div className="flex justify-between mb-3">
           <h1 className="font-semibold">Add Pastor</h1>
           <FontAwesomeIcon

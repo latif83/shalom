@@ -41,7 +41,7 @@ export const Login = () => {
   }, [sendData]);
 
   return (
-    <section className="bg-gray-50">
+    <section style={{height:'100svh'}} className="bg-gray-50">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <Image
           className="w-12 h-12 mr-2 mb-3"

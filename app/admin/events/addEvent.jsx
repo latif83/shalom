@@ -79,8 +79,8 @@ export const AddEvent = ({ setAddEvent, setGE }) => {
   };
 
   return (
-    <div className={`${styles.container} pt-10`}>
-      <div className="w-full max-w-xl mx-auto bg-white rounded shadow p-10">
+    <div className={`${styles.container} sm:pt-10`}>
+      <div className="w-full max-w-xl mx-auto h-full sm:h-auto bg-white sm:rounded shadow p-10">
         <div className="flex justify-between mb-3">
           <h1 className="font-semibold">Add Event</h1>
           <FontAwesomeIcon
