@@ -1,6 +1,20 @@
 "use server";
 import prisma from "@/config/prisma";
 
+export const getCounts = async () => {
+  const pastorsCount = await prisma.shalom_pastors.count();
+  const membersCount = await prisma.shalom_members.count();
+  const eventsCount = await prisma.shalom_events.count();
+
+  // console.log({ pastorsCount, membersCount, eventsCount });
+
+  return {
+    pastorsCount,
+    membersCount,
+    eventsCount,
+  };
+};
+
 export const addPastor = async (formData) => {
   let { f_name, l_name, title, email, address, contact } = formData;
   const createPastor = await prisma.shalom_pastors.create({
