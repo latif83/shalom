@@ -7,12 +7,16 @@ import { AddEvent } from "./addEvent";
 import { useEffect, useState } from "react";
 import { getEvents } from "@/actions/actions";
 import { Delete } from "@/components/delete/Delete";
+import { EditEvent } from "./editEvent";
 
 export default function Events() {
   const [addEvent, setAddEvent] = useState(false);
+  const [editEvent, setEditEvent] = useState(false);
   const [gE,setGE] = useState(true)
   const [loading,setLoading] = useState(true)
   const [events,setEvents] = useState([])
+
+  const [eventDetails,setEventDetails] = useState({})
 
   const [openDel, setOpenDel] = useState(false);
   const section = "event";
@@ -35,6 +39,8 @@ export default function Events() {
   return (
     <div className="overflow-auto" style={{ height: "100svh" }}>
       {addEvent && <AddEvent setAddEvent={setAddEvent} setGE={setGE} />}
+
+      {editEvent && <EditEvent setEditEvent={setEditEvent} setGE={setGE} eventDetails={eventDetails} />}
 
       {openDel && (
         <Delete
@@ -152,6 +158,7 @@ export default function Events() {
                 <td className="px-6 py-4"><p>{new Date(event.eDate).toDateString()}</p> <p>@ {new Date(event.eDate).toLocaleTimeString()}</p></td>
                 <td className="px-6 py-4">
                   <button
+                  onClick={()=>{setEditEvent(true); setEventDetails(event)}}
                     type="button"
                     className="font-medium text-blue-600 hover:underline"
                   >
