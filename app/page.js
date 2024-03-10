@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Contact } from "@/components/Contact/Contact";
 import { Footer } from "@/components/Footer/Footer";
+import { Events } from "@/components/events/Events";
 
 export default function Home() {
   const [slideSettings, setSlideSettings] = useState({
@@ -357,21 +358,7 @@ export default function Home() {
         </a>
       </div>
 
-      <div
-        style={{ backgroundColor: "#002b67" }}
-        className="sm:px-12 px-3 py-12 text-white relative"
-      >
-        <h2 className="text-xl font-bold mt-8 mb-4">Events</h2>
-        <p>
-          Witness our energetic congregation in action as we celebrate our faith
-          and grow closer to God through our events. From weekly worship
-          services to yearly celebrations, find an event that fits your calendar
-          and come experience the spirit of Shalom Church.
-        </p>
-        <p className="italic mt-5">
-          No events at the moment, please check again later.
-        </p>
-      </div>
+      <Events />
       <Contact />
       <Footer />
     </main>

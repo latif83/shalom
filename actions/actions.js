@@ -265,6 +265,26 @@ export const getEvents = async () => {
   }
 };
 
+export const getCEvents = async () => {
+  const events = await prisma.shalom_events.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+  if (events) {
+    return {
+      status: true,
+      msg: "Events retrieved successfully",
+      events,
+    };
+  } else {
+    return {
+      status: false,
+      msg: "Error getting events",
+    };
+  }
+};
+
 export const deleteRecordBySection = async (section, sectionId) => {
   try {
     let deleteResult;
