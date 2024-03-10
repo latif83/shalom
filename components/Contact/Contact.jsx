@@ -9,7 +9,7 @@ export const Contact = ()=>{
           id="map"
           className="relative h-[300px] overflow-hidden bg-cover bg-[50%] bg-no-repeat"
         >
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15881.012481665923!2d-0.2554758!3d5.6765026999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9f4df7adcb59%3A0xb277288105e12c4b!2sTHAGOSPEL%20CHURCH!5e0!3m2!1sen!2sgh!4v1687111217817!5m2!1sen!2sgh" width="100%" height="480" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3970.3997049795357!2d-0.26506662501410755!3d5.655180894326191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMzknMTguNyJOIDDCsDE1JzQ1LjAiVw!5e0!3m2!1sen!2sgh!4v1710113012163!5m2!1sen!2sgh" width="100%" height="480" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <motion.div id="getInTouch" initial={{ opacity: 0, y: -100 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export const Contact = ()=>{
                       </div>
                       <div className="ml-6 grow">
                         <p className="mb-2 font-bold ">Mobile</p>
-                        <p className="text-neutral-500">+233 55 697 8861</p>
+                        <p className="text-neutral-500">+233 500 830 490</p>
                       </div>
                     </div>
                   </div>
@@ -105,7 +105,7 @@ export const Contact = ()=>{
                       <div className="ml-6 grow">
                         <p className="mb-2 font-bold ">Support</p>
                         <p className="text-sm text-neutral-500">
-                        info@powerman.com
+                        info@shalomprayerministry.com
                         </p>
                       </div>
                     </div>
@@ -133,7 +133,7 @@ export const Contact = ()=>{
                       <div className="ml-6 grow">
                         <p className="mb-2 font-bold ">Address</p>
                         <p className="text-sm text-neutral-500">
-                        THAGOSPEL CHURCH, Halleluyah Junction, Accra
+                        Ofankor sawmill Ofankor barrier, Accra
                         </p>
                       </div>
                     </div>
