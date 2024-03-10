@@ -264,3 +264,47 @@ export const getEvents = async () => {
     };
   }
 };
+
+export const deleteRecordBySection = async (section, sectionId) => {
+  try {
+    let deleteResult;
+    switch (section) {
+      case 'pastor':
+        deleteResult = await prisma.shalom_pastors.delete({
+          where: { id: sectionId }
+        });
+        break;
+      case 'member':
+        deleteResult = await prisma.shalom_members.delete({
+          where: { id: sectionId }
+        });
+        break;
+      case 'event':
+        deleteResult = await prisma.shalom_events.delete({
+          where: { id: sectionId }
+        });
+        break;
+      default:
+        throw new Error('Invalid section provided');
+    }
+
+    if (deleteResult) {
+      return {
+        status: true,
+        msg: `${section} deleted successfully`,
+      };
+    } else {
+      return {
+        status: false,
+        msg: `Error deleting record from ${section}`,
+      };
+    }
+  } catch (error) {
+    console.error(`Error deleting record from ${section}:`, error);
+    return {
+      status: false,
+      msg: `Error deleting record from ${section}`,
+    };
+  }
+};
+

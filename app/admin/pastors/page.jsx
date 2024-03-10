@@ -6,12 +6,16 @@ import { AddPastor } from "./addPastor";
 import { useEffect, useState } from "react";
 import { getPastors } from "@/actions/actions";
 import { EditPastor } from "./editPastor";
+import { Delete } from "@/components/delete/Delete";
 
 export default function PastorsPage() {
   const [addPastor, setAddPastor] = useState(false);
   const [editPastor, setEditPastor] = useState(false);
   const [pastorDetails, setPastorDetails] = useState({});
   const [loading, setLoading] = useState(false);
+  const [openDel, setOpenDel] = useState(false);
+  const section = "pastor";
+  const [sectionId, setSectionId] = useState(null);
 
   const [pastors, setPastors] = useState([]);
   const [gP, setGP] = useState(true);
@@ -38,6 +42,14 @@ export default function PastorsPage() {
           setEditPastor={setEditPastor}
           setGP={setGP}
           pastorDetails={pastorDetails}
+        />
+      )}
+      {openDel && (
+        <Delete
+          section={section}
+          sectionId={sectionId}
+          setOpenDel={setOpenDel}
+          setG={setGP}
         />
       )}
       <Header cPage="pastors" />
@@ -150,6 +162,10 @@ export default function PastorsPage() {
                         Edit
                       </button>
                       <button
+                        onClick={() => {
+                          setOpenDel(true);
+                          setSectionId(pastor.id);
+                        }}
                         type="button"
                         className="font-medium text-red-600 hover:underline ms-3"
                       >

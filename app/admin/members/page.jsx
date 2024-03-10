@@ -6,6 +6,7 @@ import { AddMember } from "./addMember";
 import { useEffect, useState } from "react";
 import { getMembers } from "@/actions/actions";
 import { EditMember } from "./editMember";
+import { Delete } from "@/components/delete/Delete";
 
 export default function MembersPage() {
   const [addMember, setAddMember] = useState(false);
@@ -15,6 +16,10 @@ export default function MembersPage() {
 
   const [members, setMembers] = useState([]);
   const [gM, setGM] = useState(true);
+
+  const [openDel, setOpenDel] = useState(false);
+  const section = "member";
+  const [sectionId, setSectionId] = useState(null);
 
   useEffect(() => {
     const gMembers = async () => {
@@ -38,6 +43,14 @@ export default function MembersPage() {
           setEditMember={setEditMember}
           setGM={setGM}
           memberDetails={memberDetails}
+        />
+      )}
+      {openDel && (
+        <Delete
+          section={section}
+          sectionId={sectionId}
+          setOpenDel={setOpenDel}
+          setG={setGM}
         />
       )}
       <Header cPage="members" />
@@ -150,6 +163,10 @@ export default function MembersPage() {
                         Edit
                       </button>
                       <button
+                        onClick={() => {
+                          setSectionId(member.id);
+                          setOpenDel(true);
+                        }}
                         type="button"
                         className="font-medium text-red-600 hover:underline ms-3"
                       >
