@@ -6,12 +6,17 @@ import Image from "next/image";
 import { AddEvent } from "./addEvent";
 import { useEffect, useState } from "react";
 import { getEvents } from "@/actions/actions";
+import { Delete } from "@/components/delete/Delete";
 
 export default function Events() {
   const [addEvent, setAddEvent] = useState(false);
   const [gE,setGE] = useState(true)
   const [loading,setLoading] = useState(true)
   const [events,setEvents] = useState([])
+
+  const [openDel, setOpenDel] = useState(false);
+  const section = "event";
+  const [sectionId, setSectionId] = useState(null);
 
   useEffect(() => {
     const gEvents = async () => {
@@ -30,6 +35,15 @@ export default function Events() {
   return (
     <div className="overflow-auto" style={{ height: "100svh" }}>
       {addEvent && <AddEvent setAddEvent={setAddEvent} setGE={setGE} />}
+
+      {openDel && (
+        <Delete
+          section={section}
+          sectionId={sectionId}
+          setOpenDel={setOpenDel}
+          setG={setGE}
+        />
+      )}
 
       <Header cPage="events" />
 
@@ -144,6 +158,10 @@ export default function Events() {
                     Edit
                   </button>
                   <button
+                  onClick={()=>{
+                    setSectionId(event.id)
+                    setOpenDel(true)
+                  }}
                     type="button"
                     className="font-medium text-red-600 hover:underline ms-3"
                   >
